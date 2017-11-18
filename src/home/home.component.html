@@ -1,0 +1,33 @@
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        CheapFlights in Europe!
+      </h1>
+      <h2 class="subtitle">
+        Search for flights in Europe and plan a trip for your favorite destination!
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="box search-widget">
+  <h1 class="title"></h1>
+  <div class="columns">
+    <div class="column origin">
+      <airport-selector component-name="{text:'Origin'}" airports="$ctrl.airports" on-airport-selected="$ctrl.originSelected($event);"
+        place="$ctrl.origin">
+      </airport-selector>
+    </div>
+    <div class="column destination">
+      <div ui-view></div>
+    </div>
+    <div class="column period">
+      <div ui-view="date"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div ui-view="flightlist"></div>
+</section>

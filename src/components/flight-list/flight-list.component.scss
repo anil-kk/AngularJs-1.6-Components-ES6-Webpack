@@ -1,0 +1,24 @@
+.flight-list{
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #e7c341;
+    .heading{
+        color:#0b388d;
+    }
+    .title{
+        color:#fff;
+    }
+
+}
+.flight-list-info{
+    .tag{
+        background-color: #e7c341;
+        color:#fff;
+    }
+    .is-border{
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+        margin: 1.25rem;
+    }
+}

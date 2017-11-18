@@ -1,0 +1,86 @@
+<div class="box flight-list-info">
+    <p ng-if="$ctrl.cheapFlights.flights.length > 0" class="content">Cheap Flights avialable at this moment! </p>
+    <div class="columns">
+        <div class="column">
+            <div class="columns">
+                <div class="column">
+                    <div class="columns is-border">
+                        <div class="column">
+                            <h2 class="subtitle">From</h2>
+                        </div>
+                        <div class="column">
+                            <h2 class="subtitle">
+                                <span class="tag is-large">{{::$ctrl.selectedAirports.origin.name}}-{{::$ctrl.selectedAirports.origin.country.name}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="columns is-border">
+                        <div class="column">
+                            <h2 class="subtitle">To</h2>
+                        </div>
+                        <div class="column">
+                            <h2 class="subtitle">
+                                <span class="tag is-large">{{::$ctrl.selectedAirports.destination.name}}-{{::$ctrl.selectedAirports.destination.country.name}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="columns">
+                <div class="column">
+                    <div class="columns is-border">
+                        <div class="column">
+                            <h2 class="subtitle">Between</h2>
+                        </div>
+                        <div class="column">
+                            <h2 class="subtitle">
+                                <span class="tag is-large">{{::$ctrl.dates.startDate}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="columns is-border">
+                        <div class="column">
+                            <h2 class="subtitle">And</h2>
+                        </div>
+                        <div class="column">
+                            <h2 class="subtitle">
+                                <span class="tag is-large">{{::$ctrl.dates.endDate}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box flight-list-info" ng-if="$ctrl.cheapFlights.flights.length === 0">
+    <h2 class="subtitle">
+        <span class="tag is-large">Sorry!</span>
+    </h2>
+    <p class="content">No flights avialable for your preference at this momemt. Please change your preference and search again. </p>
+</div>
+<div class="box flight-list" ng-repeat="flight in $ctrl.cheapFlights.flights">
+    <nav class="level">
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="heading">{{::$ctrl.selectedAirports.origin.name}}</p>
+                <p class="title">{{::flight.dateFrom | date:'medium'}}</p>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="heading">{{::$ctrl.selectedAirports.destination.name}}</p>
+                <p class="title">{{::flight.dateFrom | date:'medium'}}</p>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="heading">Price</p>
+                <p class="title">{{::flight.currency}}{{flight.price | number:2}}</p>
+            </div>
+        </div>
+    </nav>
+</div>
