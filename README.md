@@ -1,18 +1,18 @@
-# AngularJs.1.6.6, ES6 EcmaScript2015, Webpack, Components, One Way Data Flow
+# AngularJs-1.6.6 Components - EcmaScript2015 - Webpack
 
-# Component Style application development using AngularJs 1.6, One Way Data Flow, EcmaScript2015
+## Component Style client side application development using AngularJs 1.6, One Way Data Flow, EcmaScript2015 and bundling using Webpack
 
 ## Development
 
-Install required packages::
+Install required packages:
 
   $ npm install
 
-Create a JS bundle with Webpack::
+Create a JS bundle with Webpack:
 
   $ npm run build
 
-Start the Webpack development server on 'localhost:8080'::
+Start the Webpack development server on 'localhost:8080':
 
   $ npm run start
 
