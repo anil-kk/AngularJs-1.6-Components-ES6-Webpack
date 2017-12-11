@@ -2,11 +2,11 @@
     <div class="column">
         <h4 class="subtitle">{{::$ctrl.componentName.text}}</h4>
         <div class="dropdown " ng-mouseleave="$ctrl.showDropdown = false;">
-            <input ng-focus ="$ctrl.showDropdown = true; $ctrl.onInputFocus();" ng-model="$ctrl.userInput" ng-change="$ctrl.updateAirports($ctrl.userInput);" class="input" type="text" placeholder="Search">
+            <input ng-focus ="$ctrl.onInputFocus();" ng-model="$ctrl.userInput" ng-change="$ctrl.updateAirports($ctrl.userInput);" class="input" type="text" placeholder="Search">
             <div class="dropdown-menu" ng-if="$ctrl.showDropdown">
                 <div class="dropdown-content">
                     <a class="dropdown-item" ng-click="$ctrl.airportSelected(airport);" ng-repeat="airport in $ctrl.filteredAirports">
-                        {{::airport.name}}
+                        {{airport.name}}
                     </a>
                 </div>
             </div>
