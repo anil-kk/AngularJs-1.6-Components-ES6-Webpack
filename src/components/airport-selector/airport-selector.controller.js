@@ -11,10 +11,20 @@ export default class AirportSelectorController {
     }
 
     updateAirports(userInput){
-        this.showDropdown =true;
+        if(this.isAirportSelected()){
+            return;
+        }
+        this.showDropdown = true;
         this.filteredAirports = this.airports.filter( (airport, index, airports) => {
             return airport.name.toLowerCase().startsWith(userInput);
         });
+    }
+
+    onInputFocus(){
+        this.selectedAirport = null;
+        this.showDropdown = false;
+        this.userInput = "";
+        this.updateAirports(this.userInput);
     }
 
     isAirportSelected(){
@@ -26,7 +36,7 @@ export default class AirportSelectorController {
 
     airportSelected(selectedAirport){
         this.selectedAirport = selectedAirport;
-        this.userInput ="";
+        this.userInput = selectedAirport.name;
         this.showDropdown = false;
         this.onAirportSelected({$event:{selectedAirport}});
     }
